@@ -21,6 +21,8 @@ import { ImagesPhasesComponent } from './project-detail/phases/images-phases/ima
 import { AttributesProjectsComponent } from './home/projects/attributes-projects/attributes-projects.component';
 import { AttributesSummaryComponent } from './project-detail/summary/attributes-summary/attributes-summary.component';
 
+import { FirebaseService } from './firebase.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,7 @@ import { AttributesSummaryComponent } from './project-detail/summary/attributes-
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
