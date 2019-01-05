@@ -13,11 +13,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private fb: FirebaseService) { }
 
   ngOnInit() {
-    if (!this.fb.dataStored) {
+    if (!this.fb.dataHomeStored) {
       /* Call method in Firebase service that gets the data from the Firebase database.*/
       this.fb.getHomeData();
       /* When data has been fetched from Firebase successfully */
-      this.fb.dataRetrieved.subscribe(
+      this.fb.dataHomeRetrieved.subscribe(
           () => {
             this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
           }
@@ -27,9 +27,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
-
   ngOnDestroy() {
-    this.fb.dataRetrieved.unsubscribe();
+    this.fb.dataHomeRetrieved.unsubscribe();
   }
 
 }
