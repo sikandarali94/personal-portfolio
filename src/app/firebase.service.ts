@@ -11,12 +11,12 @@ export class FirebaseService {
     constructor(private http: HttpClient) {}
 
     getHomeData() {
-        /* GET data from Firebase to populate in the app. Subscribing here because we want to store the returned data within the service.
+        /* GET data from Firebase to populate in the app. Subscribing here because we want to store the retrieved data within the service.
          */
         return this.http.get('https://personal-portfolio-f7b43.firebaseio.com/home.json').subscribe(
             result => {
-                this.homeData = result;
-                this.dataReturned.next();
+                this.homeData = result; // Store the retrieved data within the service.
+                this.dataReturned.next(); // Components that rely on the retrieved data know now that data retrieval was successful.
             },
             error => {
                 console.log(error);
@@ -25,6 +25,6 @@ export class FirebaseService {
     }
 
     fetchTitle() {
-        return this.homeData.title;
+        return this.homeData.title; // Return title section data.
     }
 }
