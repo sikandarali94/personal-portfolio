@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import {Title} from './title.model';
 import {Project} from './projects/project.model';
+import {About} from './about/about.model';
 
 @Component({
     selector: 'app-home',
@@ -11,6 +12,7 @@ import {Project} from './projects/project.model';
 export class HomeComponent implements OnInit, OnDestroy {
     titleData: Title = new Title('', '', '', []);
     projectsData: Project[] = [new Project('', [], '', '', '', [], '')];
+    aboutData: About = new About('', [], '');
 
     constructor(private fb: FirebaseService) { }
 
@@ -23,6 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
                 () => {
                     this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
                     this.projectsData = this.fb.fetchProjects(); // Retrieve data for projects section.
+                    this.aboutData = this.fb.fetchAbout(); // Retrieve data for about section.
                 }
             );
         } else {

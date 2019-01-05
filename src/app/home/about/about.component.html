@@ -1,3 +1,9 @@
-<p>
-  about works!
-</p>
+<section>
+  <div class="about-info">
+    <h1>{{ about.title }}</h1>
+    <p>{{ about.description }}</p>
+    <ul>
+      <li *ngFor="let tech of about.technologies">{{tech}}</li>
+    </ul>
+  </div>
+</section>
