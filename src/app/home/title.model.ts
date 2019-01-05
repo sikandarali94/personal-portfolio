@@ -1,6 +1,4 @@
-/* Here we define the structure of the data we should have to populate the title section of the home page of our app.
- */
-
+/* Here we define the structure of the data we should have to populate the title section of the home page of our app. */
 export class Title {
     public motto: string; // A title should have a motto property of string type.
     public subheading: string; // A title should have a subheading property of string type.
