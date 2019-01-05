@@ -8,7 +8,7 @@ import {Title} from './title.model';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  titleData: Title;
+  titleData: Title = new Title('', '', '', []);
 
   constructor(private fb: FirebaseService) { }
 
