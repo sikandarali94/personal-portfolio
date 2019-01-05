@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import {Title} from './title.model';
 
@@ -7,7 +7,7 @@ import {Title} from './title.model';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   titleData: Title;
 
   constructor(private fb: FirebaseService) { }
@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
           this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
         }
     );
+  }
+
+  ngOnDestroy() {
+    this.fb.dataReturned.unsubscribe();
   }
 
 }
