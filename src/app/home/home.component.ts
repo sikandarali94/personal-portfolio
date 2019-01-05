@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from '../firebase.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FirebaseService) { }
 
   ngOnInit() {
+    /* Call method in Firebase service that gets the data from the Firebase database.*/
+    this.fb.getHomeData();
   }
 
 }

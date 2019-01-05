@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,33 +27,34 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { FirebaseService } from './firebase.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ProjectListComponent,
-    ProjectDetailComponent,
-    ProjectsComponent,
-    AboutComponent,
-    ContactComponent,
-    FooterComponent,
-    ListComponent,
-    SummaryComponent,
-    PhasesComponent,
-    TechnologiesComponent,
-    TechListComponent,
-    ContactListComponent,
-    ImagesProjectsComponent,
-    ImagesPhasesComponent,
-    AttributesProjectsComponent,
-    AttributesSummaryComponent,
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FlexLayoutModule
-  ],
-  providers: [FirebaseService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        ProjectListComponent,
+        ProjectDetailComponent,
+        ProjectsComponent,
+        AboutComponent,
+        ContactComponent,
+        FooterComponent,
+        ListComponent,
+        SummaryComponent,
+        PhasesComponent,
+        TechnologiesComponent,
+        TechListComponent,
+        ContactListComponent,
+        ImagesProjectsComponent,
+        ImagesPhasesComponent,
+        AttributesProjectsComponent,
+        AttributesSummaryComponent,
+        NotFoundComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FlexLayoutModule
+    ],
+    providers: [FirebaseService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
