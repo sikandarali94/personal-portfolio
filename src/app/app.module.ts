@@ -45,12 +45,12 @@ import { FirebaseService } from './firebase.service';
     ImagesPhasesComponent,
     AttributesProjectsComponent,
     AttributesSummaryComponent,
-    NotFoundComponent,
-    FlexLayoutModule
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule
   ],
   providers: [FirebaseService],
   bootstrap: [AppComponent]
