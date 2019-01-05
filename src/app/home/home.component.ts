@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     /* Call method in Firebase service that gets the data from the Firebase database.*/
     this.fb.getHomeData();
     /* When data has been fetched from Firebase successfully */
-    this.fb.dataReturned.subscribe(
+    this.fb.dataRetrieved.subscribe(
         () => {
           this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
         }
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.fb.dataReturned.unsubscribe();
+    this.fb.dataRetrieved.unsubscribe();
   }
 
 }

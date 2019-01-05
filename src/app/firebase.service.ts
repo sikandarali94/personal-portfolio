@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class FirebaseService {
-    dataReturned = new Subject();
+    dataRetrieved = new Subject();
 
     private homeData;
 
@@ -16,7 +16,7 @@ export class FirebaseService {
         return this.http.get('https://personal-portfolio-f7b43.firebaseio.com/home.json').subscribe(
             result => {
                 this.homeData = result; // Store the retrieved data within the service.
-                this.dataReturned.next(); // Components that rely on the retrieved data know now that data retrieval was successful.
+                this.dataRetrieved.next(); // Components that rely on the retrieved data know now that data retrieval was successful.
             },
             error => {
                 console.log(error);
