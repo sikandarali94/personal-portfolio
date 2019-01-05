@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class FirebaseService {
-    dataHomeRetrieved = new Subject();
+    dataHomeRetrieved = new Subject(); // Observes if
     dataHomeStored = false;
 
     private homeData;
@@ -12,13 +12,14 @@ export class FirebaseService {
     constructor(private http: HttpClient) {}
 
     getHomeData() {
-        /* GET data from Firebase to populate in the app. Subscribing here because we want to store the retrieved data within the service.
+        /* GET data from Firebase to populate the home page in the app. Subscribing here because we want to store the retrieved data within
+        the service.
          */
         return this.http.get('https://personal-portfolio-f7b43.firebaseio.com/home.json').subscribe(
             result => {
-                this.homeData = result; // Store the retrieved data within the service.
+                this.homeData = result; // Store the retrieved home page data within the service.
                 this.dataHomeStored = true;
-                this.dataHomeRetrieved.next(); // Components that rely on the retrieved data know now that data retrieval was successful.
+                this.dataHomeRetrieved.next(); // Indicate home page data has been retrieved
             },
             error => {
                 console.log(error);
@@ -28,5 +29,9 @@ export class FirebaseService {
 
     fetchTitle() {
         return this.homeData.title; // Return title section data.
+    }
+
+    fetchProjects() {
+        return this.homeData.projects; // Return projects section data.
     }
 }
