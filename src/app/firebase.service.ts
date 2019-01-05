@@ -34,4 +34,8 @@ export class FirebaseService {
     fetchProjects() {
         return this.homeData.projects; // Return projects section data.
     }
+
+    fetchAbout() {
+        return this.homeData.about; // Return projects about data.
+    }
 }

@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit, OnDestroy {
                 () => {
                     this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
                     this.projectsData = this.fb.fetchProjects(); // Retrieve data for projects section.
-                    console.log(typeof this.projectsData);
                 }
             );
         } else {
