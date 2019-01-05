@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import {Title} from './home/title.model';
+import {Project} from './home/projects/project.model';
+import {About} from './home/about/about.model';
 
 @Injectable()
 export class FirebaseService {
@@ -27,15 +30,15 @@ export class FirebaseService {
         );
     }
 
-    fetchTitle() {
+    fetchTitle(): Title {
         return this.homeData.title; // Return title section data.
     }
 
-    fetchProjects() {
+    fetchProjects(): Project[] {
         return this.homeData.projects; // Return projects section data.
     }
 
-    fetchAbout() {
+    fetchAbout(): About {
         return this.homeData.about; // Return projects about data.
     }
 }
