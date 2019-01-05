@@ -1,8 +1,13 @@
 <section>
   <div class="project" *ngFor="let project of projects">
     <div class="project-heading">
-      <h1>{{ project.title }}</h1>
-      <h2>{{ project.subheading }}</h2>
+      <div class="heading">
+        <h1>{{ project.title }}</h1>
+        <h2>{{ project.subheading }}</h2>
+      </div>
+      <div class="technologies">
+        <img [src]="technology" alt="technology-icon" width="20px" *ngFor="let technology of project.technologies">
+      </div>
     </div>
     <div class="attributes-summary">
       <div class="attributes-button">
