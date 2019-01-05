@@ -2,18 +2,16 @@
 <section class="portfolio-title">
     <div class="motto-image">
         <div class="motto">
-            <h1></h1>
-            <h2></h2>
+            <h1>{{ titleData.motto }}</h1>
+            <h2>{{ titleData.subheading }}</h2>
         </div>
         <div class="image">
-            <img src="" alt="portfolio-portrait-photo">
+            <img [src]="titleData.img" alt="portfolio-portrait-photo">
         </div>
     </div>
     <nav>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li *ngFor="let link of titleData.links">{{ link | uppercase }}</li>
         </ul>
     </nav>
 </section>
