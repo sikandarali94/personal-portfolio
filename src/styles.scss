@@ -1,3 +1,6 @@
+/* Global colors */
+$text-secondary: #f3f3f3;
+
 /* You can add global styles to this file, and also import other style files */
 * {
   box-sizing: border-box;
@@ -6,5 +9,5 @@
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;
-  color: #f3f3f3;
+  color: $text-secondary;
 }
