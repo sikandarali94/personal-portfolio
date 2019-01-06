@@ -6,9 +6,7 @@
         <h1>{{ project.title }}</h1>
         <h2>{{ project.subheading }}</h2>
       </div>
-      <div class="technologies">
-        <img [src]="technology" alt="technology-icon" width="20px" *ngFor="let technology of project.technologies">
-      </div>
+      <app-technologies [technologies]="project.technologies"></app-technologies>
     </div>
     <div class="attributes-summary">
       <div class="attributes-button">
@@ -24,8 +22,6 @@
         <p>{{ project.summary }}</p>
       </div>
     </div>
-    <div class="project-images">
-      <img [src]="image" alt="project-snapshot" width="200px" *ngFor="let image of project.img">
-    </div>
+    <app-images-projects [imagesURL]="project.img"></app-images-projects>
   </div>
 </section>

@@ -4,10 +4,6 @@
     <div class="contact-greeting">
       <p *ngFor="let heading of contact.headings">{{ heading }}</p>
     </div>
-    <div class="contact-links">
-      <p *ngFor="let link of contact.links">
-        <a [href]="link[1]">{{ link[0] }}</a>
-      </p>
-    </div>
+    <app-contact-list [links]="contact.links"></app-contact-list>
   </div>
 </section>

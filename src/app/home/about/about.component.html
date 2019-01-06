@@ -3,8 +3,6 @@
   <div class="about-info">
     <h1>{{ about.title }}</h1>
     <p>{{ about.description }}</p>
-    <ul>
-      <li *ngFor="let tech of about.technologies">{{tech}}</li>
-    </ul>
+    <app-tech-list [techList]="about.technologies"></app-tech-list>
   </div>
 </section>
