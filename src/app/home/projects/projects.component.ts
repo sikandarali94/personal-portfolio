@@ -8,7 +8,7 @@ import {Project} from './project.model';
 })
 export class ProjectsComponent implements OnInit {
   /* Home component binds its projects data to the projects variable here. */
-  @Input() projects: Project[] = [new Project('', [], '', '', '', [], '')];
+  @Input() projects: Project[] = [new Project([[]], '', '', '', [], '', [])];
 
   constructor() { }
 
