@@ -3,8 +3,8 @@ import { FirebaseService } from '../firebase.service';
 import {Title} from './title.model';
 import {Project} from './projects/project.model';
 import {About} from './about/about.model';
-import {Contact} from './contact/contact.model';
-import {Footer} from './footer/footer.model';
+import {Contact} from '../common/contact/contact.model';
+import {Footer} from '../common/footer/footer.model';
 
 @Component({
     selector: 'app-home',
