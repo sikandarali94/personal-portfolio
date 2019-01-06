@@ -11,6 +11,7 @@ import {Contact} from './contact/contact.model';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+    homeData;
     titleData: Title = new Title('', '', '', []);
     projectsData: Project[] = [new Project('', [], '', '', '', [], '')];
     aboutData: About = new About('', [], '');
@@ -25,14 +26,19 @@ export class HomeComponent implements OnInit, OnDestroy {
             /* When data has been fetched from Firebase successfully */
             this.fb.dataHomeRetrieved.subscribe(
                 () => {
-                    this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
-                    this.projectsData = this.fb.fetchProjects(); // Retrieve data for projects section.
-                    this.aboutData = this.fb.fetchAbout(); // Retrieve data for about section.
-                    this.contactData = this.fb.fetchContact(); // Retrieve data for contact section.
+                    this.homeData = this.fb.fetchHomeData(); // Fetch data for the home page.
+                    this.titleData = this.homeData.title; // Store data for title section.
+                    this.projectsData = this.homeData.projects; // Store data for projects section.
+                    this.aboutData = this.homeData.about; // Store data for about section.
+                    this.contactData = this.homeData.contact; // Store data for contact section.
                 }
             );
         } else {
-            this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
+            this.homeData = this.fb.fetchHomeData(); // Fetch data for the home page.
+            this.titleData = this.homeData.title; // Store data for title section.
+            this.projectsData = this.homeData.projects; // Store data for projects section.
+            this.aboutData = this.homeData.about; // Store data for about section.
+            this.contactData = this.homeData.contact; // Store data for contact section.
         }
     }
 
