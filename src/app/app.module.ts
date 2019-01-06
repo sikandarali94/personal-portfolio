@@ -25,6 +25,7 @@ import { AttributesSummaryComponent } from './project-detail/summary/attributes-
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { FirebaseService } from './firebase.service';
+import { CommonComponent } from './common/common.component';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,8 @@ import { FirebaseService } from './firebase.service';
         ImagesPhasesComponent,
         AttributesProjectsComponent,
         AttributesSummaryComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        CommonComponent
     ],
     imports: [
         BrowserModule,
