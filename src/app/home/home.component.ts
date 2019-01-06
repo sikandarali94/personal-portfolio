@@ -4,6 +4,7 @@ import {Title} from './title.model';
 import {Project} from './projects/project.model';
 import {About} from './about/about.model';
 import {Contact} from './contact/contact.model';
+import {Footer} from './footer/footer.model';
 
 @Component({
     selector: 'app-home',
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     projectsData: Project[] = [new Project('', [], '', '', '', [], '')];
     aboutData: About = new About('', [], '');
     contactData: Contact = new Contact([], [[]]);
+    footerData: Footer = new Footer('');
 
     constructor(private fb: FirebaseService) { }
 
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
                     this.projectsData = this.homeData.projects; // Store data for projects section.
                     this.aboutData = this.homeData.about; // Store data for about section.
                     this.contactData = this.homeData.contact; // Store data for contact section.
+                    this.footerData = this.homeData.footer; // Store data for footer section.
                 }
             );
         } else {
@@ -39,6 +42,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.projectsData = this.homeData.projects; // Store data for projects section.
             this.aboutData = this.homeData.about; // Store data for about section.
             this.contactData = this.homeData.contact; // Store data for contact section.
+            this.footerData = this.homeData.footer; // Store data for footer section.
         }
     }
 
