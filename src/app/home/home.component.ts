@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     titleData: Title = new Title('', '', '', []);
     /* projectsData is initialized to follow the convention of the Project model/s within an array to populate the projects section.
      */
-    projectsData: Project[] = [new Project('', [], '', '', '', [], '')];
+    projectsData: Project[] = [new Project([[]], '', '', '', [], '', [])];
     /* aboutData is initialized to follow the convention of the About model to populate the about section.
      */
     aboutData: About = new About('', [], '');
