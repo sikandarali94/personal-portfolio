@@ -3,6 +3,7 @@ import { FirebaseService } from '../firebase.service';
 import {Title} from './title.model';
 import {Project} from './projects/project.model';
 import {About} from './about/about.model';
+import {Contact} from './contact/contact.model';
 
 @Component({
     selector: 'app-home',
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     titleData: Title = new Title('', '', '', []);
     projectsData: Project[] = [new Project('', [], '', '', '', [], '')];
     aboutData: About = new About('', [], '');
+    contactData: Contact = new Contact([], [[]]);
 
     constructor(private fb: FirebaseService) { }
 
@@ -26,6 +28,7 @@ export class HomeComponent implements OnInit, OnDestroy {
                     this.titleData = this.fb.fetchTitle(); // Retrieve data for title section.
                     this.projectsData = this.fb.fetchProjects(); // Retrieve data for projects section.
                     this.aboutData = this.fb.fetchAbout(); // Retrieve data for about section.
+                    this.contactData = this.fb.fetchContact(); // Retrieve data for contact section.
                 }
             );
         } else {

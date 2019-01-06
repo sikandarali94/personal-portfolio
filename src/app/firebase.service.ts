@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import {Title} from './home/title.model';
 import {Project} from './home/projects/project.model';
 import {About} from './home/about/about.model';
+import {Contact} from './home/contact/contact.model';
 
 @Injectable()
 export class FirebaseService {
@@ -40,5 +41,9 @@ export class FirebaseService {
 
     fetchAbout(): About {
         return this.homeData.about; // Return projects about data.
+    }
+
+    fetchContact(): Contact {
+        return this.homeData.contact; // Return projects contact data.
     }
 }
