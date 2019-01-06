@@ -46,4 +46,8 @@ export class FirebaseService {
     fetchHomeData() {
         return this.homeData; // return data for home page.
     }
+
+    fetchCommonData() {
+        return this.commonData; // return data for common component.
+    }
 }
