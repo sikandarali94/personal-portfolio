@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-attributes-projects',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./attributes-projects.component.scss']
 })
 export class AttributesProjectsComponent implements OnInit {
+  @Input() attributes: string[][];
 
   constructor() { }
 

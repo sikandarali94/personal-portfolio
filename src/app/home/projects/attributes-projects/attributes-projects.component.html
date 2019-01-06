@@ -1,3 +1,4 @@
-<p>
-  attributes-projects works!
-</p>
+<!-- Project Attributes -->
+<div class="project-attributes">
+  <p *ngFor="let attribute of attributes">{{ attribute[0] }} <span class="attribute">{{ attribute[1] }}</span></p>
+</div>

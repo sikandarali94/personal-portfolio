@@ -10,10 +10,7 @@
     </div>
     <div class="attributes-summary">
       <div class="attributes-button">
-        <div class="project-attributes">
-          <p>Date <span class="attribute">{{ project.date }}</span></p>
-          <p>Role <span class="attribute">{{ project.role }}</span></p>
-        </div>
+        <app-attributes-projects [attributes]="project.attributes"></app-attributes-projects>
         <div class="view-button">
           <button>View Project</button>
         </div>
