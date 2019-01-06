@@ -7,7 +7,7 @@ import {Project} from './project.model';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  /* Home component binds the projects data it has to the projects variable here. */
+  /* Home component binds its projects data to the projects variable here. */
   @Input() projects: Project[] = [new Project('', [], '', '', '', [], '')];
 
   constructor() { }

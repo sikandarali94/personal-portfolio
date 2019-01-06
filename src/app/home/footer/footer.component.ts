@@ -7,14 +7,15 @@ import {Footer} from './footer.model';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  /* Home component binds its footer data to the footer variable here. */
   @Input() footer: Footer;
-  date: Date = new Date();
+  date: Date = new Date(); // Store the current date.
   year: number;
 
   constructor() { }
 
   ngOnInit() {
-    this.year = this.date.getFullYear();
+    this.year = this.date.getFullYear(); // Store the full year of the current date
   }
 
 }

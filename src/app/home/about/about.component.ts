@@ -7,6 +7,7 @@ import {About} from './about.model';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  /* Home component binds its about data to the about variable here. */
   @Input() about: About = new About('', [], '');
 
   constructor() { }
