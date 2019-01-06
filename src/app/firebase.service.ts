@@ -22,7 +22,7 @@ export class FirebaseService {
             result => {
                 this.homeData = result; // Store the retrieved home page data within the service.
                 this.dataHomeStored = true; // Data for home page has been stored.
-                this.dataHomeRetrieved.next(); // Indicate home page data has been retrieved
+                this.dataHomeRetrieved.next(); // Indicate home page data has been retrieved.
             },
             error => {
                 console.log(error);
@@ -35,7 +35,7 @@ export class FirebaseService {
             result => {
                 this.commonData = result; // Store the retrieved common component data within the service.
                 this.dataCommonStored = true; // Data for common component has been stored.
-                this.dataCommonRetrieved.next();
+                this.dataCommonRetrieved.next(); // Indicate common component data has been retrieved.
             },
             error => {
                 console.log(error);
@@ -44,6 +44,6 @@ export class FirebaseService {
     }
 
     fetchHomeData() {
-        return this.homeData;
+        return this.homeData; // return data for home page.
     }
 }
