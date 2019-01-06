@@ -3,8 +3,6 @@ import { FirebaseService } from '../firebase.service';
 import {Title} from './title.model';
 import {Project} from './projects/project.model';
 import {About} from './about/about.model';
-import {Contact} from '../common/contact/contact.model';
-import {Footer} from '../common/footer/footer.model';
 
 @Component({
     selector: 'app-home',
@@ -22,12 +20,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     /* aboutData is initialized to follow the convention of the About model to populate the about section.
      */
     aboutData: About = new About('', [], '');
-    /* contactData is initialized to follow the convention of the Contact model to populate the contact section.
-     */
-    contactData: Contact = new Contact([], [[]]);
-    /* footerData is initialized to follow the convention of the Footer model to populate the footer section.
-     */
-    footerData: Footer = new Footer('');
 
     constructor(private fb: FirebaseService) { }
 
@@ -42,8 +34,6 @@ export class HomeComponent implements OnInit, OnDestroy {
                     this.titleData = this.homeData.title; // Store data for title section.
                     this.projectsData = this.homeData.projects; // Store data for projects section.
                     this.aboutData = this.homeData.about; // Store data for about section.
-                    this.contactData = this.homeData.contact; // Store data for contact section.
-                    this.footerData = this.homeData.footer; // Store data for footer section.
                 }
             );
         } else {
@@ -51,8 +41,6 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.titleData = this.homeData.title; // Store data for title section.
             this.projectsData = this.homeData.projects; // Store data for projects section.
             this.aboutData = this.homeData.about; // Store data for about section.
-            this.contactData = this.homeData.contact; // Store data for contact section.
-            this.footerData = this.homeData.footer; // Store data for footer section.
         }
     }
 
