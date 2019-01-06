@@ -4,8 +4,8 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class FirebaseService {
-    dataHomeRetrieved = new Subject(); // Observes if
-    dataHomeStored = false;
+    dataHomeRetrieved = new Subject(); // Observes if data for the home page has been retrieved successfully.
+    dataHomeStored = false; // Indicates if data for the home page has been stored in the service.
 
     private homeData;
 
