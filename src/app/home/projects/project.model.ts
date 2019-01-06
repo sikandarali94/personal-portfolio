@@ -6,13 +6,23 @@ export class Project {
     public summary: string; // A project should have a summary property of string type.
     public technologies: string[]; // A project should have a technologies property that holds an array of strings.
     public title: string; // A project should have a title property of string type.
+    public img: string[]; // A project should have an img property that holds an array of strings.
 
-    constructor(attributes: string[][], role: string, subheading: string, summary: string, technologies: string[], title: string) {
+    constructor(
+        attributes: string[][],
+        role: string,
+        subheading: string,
+        summary: string,
+        technologies: string[],
+        title: string,
+        img: string[]
+    ) {
         this.attributes = attributes;
         this.role = role;
         this.subheading = subheading;
         this.summary = summary;
         this.technologies = technologies;
         this.title = title;
+        this.img = img;
     }
 }
