@@ -8,14 +8,14 @@ export class FirebaseService {
     dataHomeStored = false; // Indicates if data for the home page has been stored in the service.
     dataCommonRetrieved = new Subject(); // Observes if data for the common component has been retrieved successfully.
     dataCommonStored = false; // Indicates if data for the common component has been stored in the service.
-    dataProjectsRetrieved = new Subject(); // Observes if data for the projects list has been retrieved successfully.
-    dataProjectsStored = false; // Indicates if data for the projects list has been stored in the service.
+    dataProjectsRetrieved = new Subject(); // Observes if data for the project list has been retrieved successfully.
+    dataProjectsStored = false; // Indicates if data for the project list has been stored in the service.
 
     routes: string[]; // This stores all the routes for the projects to be opened in detail.
 
     private homeData; // This stores data for the home page.
     private commonData; // This stores data for contact and footer section which is displayed across all routes.
-    private projectsData; // This stores data for the projects list.
+    private projectsData; // This stores data for the project list.
 
     constructor(private http: HttpClient) {}
 
@@ -52,19 +52,19 @@ export class FirebaseService {
     }
 
     storeRoutes (projectsList) {
-        return projectsList.map(project => project.route);
+        return projectsList.map(project => project.route); // Map all route property data into an array.
     }
 
     getProjectsData() {
-        /* GET data from Firebase to populate the projects list in the app. Subscribing here because we want to store the retrieved data
+        /* GET data from Firebase to populate the project list in the app. Subscribing here because we want to store the retrieved data
         within the service.
          */
         return this.http.get('https://personal-portfolio-f7b43.firebaseio.com/projects.json').subscribe(
             result => {
-                this.projectsData = result;
-                this.dataProjectsStored = true;
-                this.routes = this.storeRoutes(this.projectsData.list);
-                this.dataProjectsRetrieved.next();
+                this.projectsData = result; // Store the retrieved project list data within the service.
+                this.routes = this.storeRoutes(this.projectsData.list); // Store the routes in project list within the service.
+                this.dataProjectsStored = true; // Data for project list component has been restored.
+                this.dataProjectsRetrieved.next(); // Indicate project list component data has been retrieved.
             },
             error => {
                 console.log(error);
