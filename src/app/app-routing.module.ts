@@ -7,9 +7,8 @@ import {NotFoundComponent} from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'projects', component: ProjectListComponent, children: [
-      { path: ':name', component: ProjectDetailComponent }
-    ]},
+  { path: 'projects', component: ProjectListComponent },
+  { path: 'projects/:name', component: ProjectDetailComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];
