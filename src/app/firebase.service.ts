@@ -10,12 +10,15 @@ export class FirebaseService {
     dataCommonStored = false; // Indicates if data for the common component has been stored in the service.
     dataProjectsRetrieved = new Subject(); // Observes if data for the project list has been retrieved successfully.
     dataProjectsStored = false; // Indicates if data for the project list has been stored in the service.
+    dataDetailRetrieved = new Subject(); // Observes if data for the project detail page has been retrieved successfully.
+    dataDetailStored = false; // Indicates if data for the project detail page has been stored in the service.
 
     routes: string[]; // This stores all the routes for the projects to be opened in detail.
 
     private homeData; // This stores data for the home page.
     private commonData; // This stores data for contact and footer section which is displayed across all routes.
     private projectsData; // This stores data for the project list.
+    private detailData; // This stores data for the project detail page.
 
     constructor(private http: HttpClient) {}
 
@@ -72,6 +75,22 @@ export class FirebaseService {
         );
     }
 
+    getDetailData() {
+        /* GET data from Firebase to populate the project detail page in the app. Subscribing here because we want to store the retrieved
+        data within the service.
+         */
+        return this.http.get('https://personal-portfolio-f7b43.firebaseio.com/detail.json').subscribe(
+            result => {
+                this.detailData = result; // Store the retrieved project detail data within the service.
+                this.dataDetailStored = true; // Data for project detail page has been restored.
+                this.dataDetailRetrieved.next(); // Indicate project detail page data has been retrieved.
+            },
+            error => {
+                console.log(error);
+            }
+        );
+    }
+
     fetchHomeData() {
         return this.homeData; // return data for home page.
     }
@@ -82,5 +101,9 @@ export class FirebaseService {
 
     fetchProjectsData() {
         return this.projectsData; // return data for project list component.
+    }
+
+    fetchDetailData() {
+        return this.detailData; // return data for project detail page.
     }
 }
