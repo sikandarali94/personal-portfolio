@@ -106,4 +106,8 @@ export class FirebaseService {
     fetchDetailData(route: string) {
         return this.detailData[route]; // return data for project detail page.
     }
+
+    fetchHeader() {
+        return this.projectsData.header || this.detailData.header; // Return the header image path.
+    }
 }

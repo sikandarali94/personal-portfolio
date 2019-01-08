@@ -9,8 +9,10 @@ import {List} from './list/list.model';
 })
 
 export class ProjectListComponent implements OnInit, OnDestroy {
+  headerImg: string; // header stores the image header URL path.
+
   /* projectsData will store data for the project list page once the Firebase service has successfully retrieved the data. */
-  projectsData = {header: '', list: [], statement: ''};
+  projectsData = {list: [], statement: ''};
 
   /* listData is initialized to follow the convention of the array of List model to populate the list section. */
   listData: List[] = [new List('', [], '')];
@@ -26,11 +28,13 @@ export class ProjectListComponent implements OnInit, OnDestroy {
           () => {
             this.projectsData = this.fb.fetchProjectsData(); // Fetch data for the project list page.
             this.listData = this.projectsData.list; // Store data for the list section.
+            this.headerImg = this.fb.fetchHeader(); // Store image header URL path.
           }
       );
     } else {
       this.projectsData = this.fb.fetchProjectsData(); // Fetch data for the project list page.
       this.listData = this.projectsData.list; // Store data for the list section.
+      this.headerImg = this.fb.fetchHeader(); // Store image header URL path.
     }
   }
 

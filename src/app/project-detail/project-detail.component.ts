@@ -7,7 +7,8 @@ import {FirebaseService} from '../firebase.service';
   styleUrls: ['./project-detail.component.scss']
 })
 export class ProjectDetailComponent implements OnInit, OnDestroy {
-  detailData = { banner: '', git: '', phases: [], summary: {}};
+    headerImg: string;
+    detailData = { banner: '', git: '', phases: [], summary: {}};
 
   constructor(private fb: FirebaseService) { }
 
@@ -19,10 +20,12 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       this.fb.dataDetailRetrieved.subscribe(
           () => {
             this.detailData = this.fb.fetchDetailData('personal-folio'); // Fetch data for the project list page.
+              this.headerImg = this.fb.fetchHeader(); // Store image header URL path.
           }
       );
     } else {
         this.detailData = this.fb.fetchDetailData('personal-folio'); // Fetch data for the project list page.
+        this.headerImg = this.fb.fetchHeader(); // Store image header URL path.
     }
   }
 
