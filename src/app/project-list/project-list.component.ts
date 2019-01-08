@@ -20,7 +20,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     // If the data for the project list page has not been retrieved and stored in the Firebase service.
     if (!this.fb.dataProjectsStored) {
-      this.fb.getProjectsData(); // Call method in Firebase service that gets data for projects list page from Firebase.
+      this.fb.getProjectsData(); // Call method in Firebase service that gets data for project list page from Firebase.
       /* When data has been fetched from Firebase successfully */
       this.fb.dataProjectsRetrieved.subscribe(
           () => {

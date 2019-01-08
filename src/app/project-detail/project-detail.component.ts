@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FirebaseService} from '../firebase.service';
 
 @Component({
   selector: 'app-project-detail',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-detail.component.scss']
 })
 export class ProjectDetailComponent implements OnInit {
+  detailData = { banner: '', git: '', phases: [], summary: {}};
 
-  constructor() { }
+  constructor(private fb: FirebaseService) { }
 
   ngOnInit() {
+    // If the data for the project detail page has not been retrieved and stored in the Firebase service.
+    if (!this.fb.dataDetailStored) {
+      this.fb.getDetailData(); // Call method in Firebase service that gets data for project detail page from Firebase.
+      /* When data has been fetched from Firebase successfully */
+      this.fb.dataDetailRetrieved.subscribe(
+          () => {
+            this.detailData = this.fb.fetchDetailData('personal-folio'); // Fetch data for the project list page.
+          }
+      );
+    }
   }
 
 }

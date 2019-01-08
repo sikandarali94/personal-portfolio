@@ -103,7 +103,7 @@ export class FirebaseService {
         return this.projectsData; // return data for project list component.
     }
 
-    fetchDetailData() {
-        return this.detailData; // return data for project detail page.
+    fetchDetailData(route: string) {
+        return this.detailData[route]; // return data for project detail page.
     }
 }
