@@ -21,6 +21,8 @@ export class ProjectDetailComponent implements OnInit {
             this.detailData = this.fb.fetchDetailData('personal-folio'); // Fetch data for the project list page.
           }
       );
+    } else {
+        this.detailData = this.fb.fetchDetailData('personal-folio'); // Fetch data for the project list page.
     }
   }
 
