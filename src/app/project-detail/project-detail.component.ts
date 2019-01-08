@@ -7,7 +7,7 @@ import {FirebaseService} from '../firebase.service';
   styleUrls: ['./project-detail.component.scss']
 })
 export class ProjectDetailComponent implements OnInit, OnDestroy {
-    headerImg: string;
+    headerImg = '';
     detailData = { banner: '', git: '', phases: [], summary: {}};
 
   constructor(private fb: FirebaseService) { }

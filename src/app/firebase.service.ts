@@ -14,6 +14,7 @@ export class FirebaseService {
     dataDetailStored = false; // Indicates if data for the project detail page has been stored in the service.
 
     routes: string[]; // This stores all the routes for the projects to be opened in detail.
+    private headerImg: string; // Store header image URL path.
 
     private homeData; // This stores data for the home page.
     private commonData; // This stores data for contact and footer section which is displayed across all routes.
@@ -65,6 +66,12 @@ export class FirebaseService {
         return this.http.get('https://personal-portfolio-f7b43.firebaseio.com/projects.json').subscribe(
             result => {
                 this.projectsData = result; // Store the retrieved project list data within the service.
+
+                // If header image URL path is not defined.
+                if (!this.headerImg) {
+                    this.headerImg = this.projectsData.header; // Store header image URL path.
+                }
+
                 this.routes = this.storeRoutes(this.projectsData.list); // Store the routes in project list within the service.
                 this.dataProjectsStored = true; // Data for project list component has been restored.
                 this.dataProjectsRetrieved.next(); // Indicate project list component data has been retrieved.
@@ -82,6 +89,12 @@ export class FirebaseService {
         return this.http.get('https://personal-portfolio-f7b43.firebaseio.com/detail.json').subscribe(
             result => {
                 this.detailData = result; // Store the retrieved project detail data within the service.
+
+                // If header image URL path is not defined.
+                if (!this.headerImg) {
+                    this.headerImg = this.detailData.header; // Store header image URL path.
+                }
+
                 this.dataDetailStored = true; // Data for project detail page has been restored.
                 this.dataDetailRetrieved.next(); // Indicate project detail page data has been retrieved.
             },
@@ -108,6 +121,6 @@ export class FirebaseService {
     }
 
     fetchHeader() {
-        return this.projectsData.header || this.detailData.header; // Return the header image path.
+        return this.headerImg; // Return the header image path.
     }
 }
