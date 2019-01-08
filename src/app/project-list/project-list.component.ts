@@ -9,7 +9,7 @@ import {List} from './list/list.model';
 })
 
 export class ProjectListComponent implements OnInit, OnDestroy {
-  headerImg: string; // header stores the image header URL path.
+  headerImg = ''; // header stores the image header URL path.
 
   /* projectsData will store data for the project list page once the Firebase service has successfully retrieved the data. */
   projectsData = {list: [], statement: ''};
