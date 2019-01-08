@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {List} from './list.model';
 
 @Component({
   selector: 'app-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+  /* Projects list component binds its list data to the projects variable here. */
+  @Input() projects: List[] = [new List('', [], '')];
 
   constructor() { }
 

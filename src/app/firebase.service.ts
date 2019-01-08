@@ -79,4 +79,8 @@ export class FirebaseService {
     fetchCommonData() {
         return this.commonData; // return data for common component.
     }
+
+    fetchProjectsData() {
+        return this.projectsData; // return data for project list component.
+    }
 }

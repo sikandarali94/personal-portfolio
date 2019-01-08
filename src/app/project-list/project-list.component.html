@@ -1,14 +1,15 @@
 <!-- Project List Section -->
 <section>
     <div class="image-header">
-        <img src="" alt="header-image">
+        <img [src]="projectsData.header" alt="header-image" width="100px">
     </div>
     <div class="projects">
         <div class="statement">
-            <p></p>
+            <p>{{ projectsData.statement }}</p>
         </div>
+        <!-- List Section -->
         <div class="list">
-            <app-list></app-list>
+            <app-list [projects]="listData"></app-list>
         </div>
     </div>
 </section>

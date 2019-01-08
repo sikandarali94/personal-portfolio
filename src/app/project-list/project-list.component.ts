@@ -1,15 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {FirebaseService} from '../firebase.service';
+import {List} from './list/list.model';
 
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
   styleUrls: ['./project-list.component.scss']
 })
-export class ProjectListComponent implements OnInit {
 
-  constructor() { }
+export class ProjectListComponent implements OnInit, OnDestroy {
+  /* projectsData will store data for the project list page once the Firebase service has successfully retrieved the data. */
+  projectsData = {header: '', list: [], statement: ''};
+
+  /* listData is initialized to follow the convention of the array of List model to populate the list section. */
+  listData: List[] = [new List('', [], '')];
+
+  constructor(private fb: FirebaseService) { }
 
   ngOnInit() {
+    // If the data for the project list page has not been retrieved and stored in the Firebase service.
+    if (!this.fb.dataProjectsStored) {
+      this.fb.getProjectsData(); // Call method in Firebase service that gets data for projects list page from Firebase.
+      /* When data has been fetched from Firebase successfully */
+      this.fb.dataProjectsRetrieved.subscribe(
+          () => {
+            this.projectsData = this.fb.fetchProjectsData(); // Fetch data for the project list page.
+            this.listData = this.projectsData.list; // Store data for the list section.
+          }
+      );
+    } else {
+      this.projectsData = this.fb.fetchProjectsData(); // Fetch data for the project list page.
+      this.listData = this.projectsData.list; // Store data for the list section.
+    }
+  }
+
+  ngOnDestroy() {
+    // When project list component is destroyed, unsubscribe from the dataProjectsRetrieved observable.
+    this.fb.dataProjectsRetrieved.unsubscribe();
   }
 
 }

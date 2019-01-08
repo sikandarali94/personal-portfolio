@@ -1,3 +1,9 @@
+<!-- List Section -->
 <ul>
-  <li><i><img src="" alt="technology-icon"></i></li>
+  <li *ngFor="let project of projects">
+    {{ project.title }}
+    <i *ngFor="let tech of project.technologies">
+      <img [src]="tech" alt="technology-icon" width="30px">
+    </i>
+  </li>
 </ul>
