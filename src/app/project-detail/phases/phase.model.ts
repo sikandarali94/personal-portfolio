@@ -1,4 +1,4 @@
-/* Define model for phases in order to populate the phases section correctly. */
+/* Define model for a phase in order to populate the phases section correctly. */
 export class Phase {
     public images: string[]; // A phase should have an images property that holds an array of strings.
     public phase: string; // A phase should have a phase property of string type.
