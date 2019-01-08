@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FirebaseService} from '../firebase.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {FirebaseService} from '../firebase.service';
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.scss']
 })
-export class ProjectDetailComponent implements OnInit {
+export class ProjectDetailComponent implements OnInit, OnDestroy {
   detailData = { banner: '', git: '', phases: [], summary: {}};
 
   constructor(private fb: FirebaseService) { }
@@ -24,6 +24,11 @@ export class ProjectDetailComponent implements OnInit {
     } else {
         this.detailData = this.fb.fetchDetailData('personal-folio'); // Fetch data for the project list page.
     }
+  }
+
+  ngOnDestroy() {
+      // When project detail component is destroyed, unsubscribe from the dataDetailRetrieved observable.
+      this.fb.dataDetailRetrieved.unsubscribe();
   }
 
 }
