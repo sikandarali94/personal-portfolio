@@ -10,7 +10,6 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'projects', component: ProjectListComponent },
   { path: 'projects/:name', component: ProjectDetailComponent },
-  { path: 'test', component: LoadingSpinnerComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];
