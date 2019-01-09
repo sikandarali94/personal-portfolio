@@ -4,11 +4,13 @@ import {HomeComponent} from './home/home.component';
 import {ProjectListComponent} from './project-list/project-list.component';
 import {ProjectDetailComponent} from './project-detail/project-detail.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {LoadingSpinnerComponent} from './ui/loading-spinner/loading-spinner.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'projects', component: ProjectListComponent },
   { path: 'projects/:name', component: ProjectDetailComponent },
+  { path: 'test', component: LoadingSpinnerComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];

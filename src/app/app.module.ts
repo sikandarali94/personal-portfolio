@@ -26,6 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { FirebaseService } from './firebase.service';
 import { CommonComponent } from './common/common.component';
+import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.component';
 
 @NgModule({
     declarations: [
@@ -48,7 +49,8 @@ import { CommonComponent } from './common/common.component';
         AttributesProjectsComponent,
         AttributesSummaryComponent,
         NotFoundComponent,
-        CommonComponent
+        CommonComponent,
+        LoadingSpinnerComponent
     ],
     imports: [
         BrowserModule,
