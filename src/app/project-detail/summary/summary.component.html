@@ -1,16 +1,21 @@
 <!-- Project Summary -->
 <div class="project-summary">
   <div class="project-main-image">
-    <p></p>
-    <div class="project-tech-icons">
-      <img src="" alt="technology-icon">
+    <p>{{ summary.title | uppercase }}</p>
+    <div class="project-tech-icons" *ngFor="let tech of summary.technologies">
+      <img [src]="tech" alt="technology-icon" width="50px">
     </div>
   </div>
   <div class="attributes-git">
-    <!-- Project Attributes -->
-    <app-attributes-summary></app-attributes-summary>
+    <div class="project-attributes">
+      <div class="title">
+        <p>{{ summary.title }}</p>
+      </div>
+      <!-- Project Attributes -->
+      <app-attributes-summary [attributes]="summary.attributes"></app-attributes-summary>
+    </div>
     <div class="git-link">
-      <a href=""></a>
+      <a *ngFor="let link of summary.links" [href]="link[1]">{{ link[0] }}</a>
     </div>
   </div>
 </div>

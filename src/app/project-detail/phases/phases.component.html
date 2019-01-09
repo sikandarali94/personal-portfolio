@@ -1,7 +1,7 @@
 <!-- Project Phases Section -->
-<section>
-  <h1></h1>
-  <p></p>
+<section *ngFor="let phase of phases">
+  <h1>{{ phase.heading }}</h1>
+  <p>{{ phase.process }}</p>
   <!-- Phase Images -->
-  <app-images-phases></app-images-phases>
+  <app-images-phases [images]="phase.images"></app-images-phases>
 </section>

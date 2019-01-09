@@ -7,7 +7,8 @@ import {FirebaseService} from '../firebase.service';
   styleUrls: ['./project-detail.component.scss']
 })
 export class ProjectDetailComponent implements OnInit, OnDestroy {
-    headerImg = '';
+    headerImg = ''; // This stores the header image url.
+    // detailData will store data for the project detail page once the Firebase service has successfully retrieved the data.
     detailData = { banner: '', git: '', phases: [], summary: {}};
 
   constructor(private fb: FirebaseService) { }

@@ -1,12 +1,13 @@
 <!-- Project Header-Summary Section -->
 <section>
-  <div class="image-header">
-    <img [src]="headerImg" alt="header-image" width="100px">
-  </div>
-  <!-- Project Summary -->
-  <app-summary></app-summary>
+    <div class="image-header">
+        <a>ALL PROJECTS</a>
+        <img [src]="headerImg" alt="header-image" width="100px">
+    </div>
+    <!-- Project Summary -->
+    <app-summary [summary]="detailData.summary"></app-summary>
 </section>
 <!-- Project Phases Section -->
-<app-phases></app-phases>
+<app-phases [phases]="detailData.phases"></app-phases>
 <!-- Contact and Footer Section -->
 <app-common></app-common>

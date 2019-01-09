@@ -1,13 +1,9 @@
-<div class="project-attributes">
-  <div class="title">
-    <p></p>
-  </div>
-  <div class="attributes">
-    <ul>
-      <li>
-        <p></p>
-        <p></p>
-      </li>
-    </ul>
-  </div>
+<!-- Project Attributes -->
+<div class="attributes">
+  <ul>
+    <li *ngFor="let key of keys">
+      <p>{{ key | titlecase }}</p>
+      <p>{{ attributes[key] }}</p>
+    </li>
+  </ul>
 </div>

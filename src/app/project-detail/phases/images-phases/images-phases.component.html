@@ -1,4 +1,4 @@
 <!-- Phase Images -->
 <div class="phase-images">
-  <img src="" alt="phase-image">
+  <img *ngFor="let image of images" [src]="image" alt="phase-image" width="100px">
 </div>
