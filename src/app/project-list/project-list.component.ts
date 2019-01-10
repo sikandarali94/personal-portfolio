@@ -9,7 +9,7 @@ import {List} from './list/list.model';
 })
 
 export class ProjectListComponent implements OnInit, OnDestroy {
-  commonData;
+  commonData; // This holds data for the common component.
 
   showSpinner = true; // Initially, show the loading spinner.
 
@@ -75,6 +75,9 @@ export class ProjectListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     // When project list component is destroyed, unsubscribe from the dataProjectsRetrieved observable.
+    this.fb.dataProjectsRetrieved.unsubscribe();
+
+    // When project list component is destroyed, unsubscribe from the dataCommonRetrieved observable.
     this.fb.dataProjectsRetrieved.unsubscribe();
   }
 
