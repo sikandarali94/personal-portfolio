@@ -1,3 +1,7 @@
+<!-- Show spinner when data is being fetched -->
+<app-loading-spinner *ngIf="showSpinner; else detailPage"></app-loading-spinner>
+<!-- Show ng-template when data has been fetched and spinner is set to hidden -->
+<ng-template #detailPage>
 <!-- Project Header-Summary Section -->
 <section>
     <div class="image-header">
@@ -10,4 +14,5 @@
 <!-- Project Phases Section -->
 <app-phases [phases]="detailData.phases"></app-phases>
 <!-- Contact and Footer Section -->
-<app-common></app-common>
+<app-common [common]="commonData"></app-common>
+</ng-template>

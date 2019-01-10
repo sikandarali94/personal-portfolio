@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit, OnDestroy {
         // When home component is destroyed, unsubscribe from the dataHomeRetrieved observable.
         this.fb.dataHomeRetrieved.unsubscribe();
 
-        // When home component component is destroyed, unsubscribe from the dataCommonRetrieved observable.
+        // When home component is destroyed, unsubscribe from the dataCommonRetrieved observable.
         this.fb.dataCommonRetrieved.unsubscribe();
     }
 
