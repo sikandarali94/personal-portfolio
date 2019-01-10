@@ -1,5 +1,5 @@
-/* Global Colors */
-$text-secondary: #f3f3f3;
+// Import Global variables
+@import "~src/variables.scss";
 
 /* Global Styling */
 * {
@@ -9,5 +9,15 @@ $text-secondary: #f3f3f3;
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;
-  color: $text-secondary;
+  color: black;
+}
+
+h1 {
+  color: $primary-color;
+  font-size:300%;
+}
+
+h2 {
+  font-size:120%;
+  color: $secondary-color;
 }

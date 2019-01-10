@@ -1,3 +1,13 @@
+// Import Global variables
+@import '~src/variables.scss';
+
+// Extends
+%title-text {
+  width:575px;
+  position: relative;
+  top: 39px;
+}
+
 /* Title Section */
 .portfolio-title {
   position:relative;
@@ -5,4 +15,28 @@
   min-height: 700px;
   background-size: cover;
   background-position: center;
+}
+
+.motto-image{
+  width:77%;
+  margin:auto;
+  position: relative;
+  top:40%;
+  transform: translateY(-50%);
+
+  img {
+    float:right;
+    border-radius: 50%;
+  }
+}
+
+.motto {
+  h1 {
+    @extend %title-text;
+  }
+  h2 {
+    @extend %title-text;
+    text-align: right;
+    margin-top: 5px;
+  }
 }
