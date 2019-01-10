@@ -1,5 +1,5 @@
 // Import Global variables
-@import '~src/variables.scss';
+@import '~src/variables';
 
 // Extends
 %title-text {
@@ -57,7 +57,7 @@ nav {
     li {
       text-align: center;
       color:$text-primary;
-      height:10px;
+      height:30px;
 
       &:hover, &:active, &:focus {
         color: $primary-color;

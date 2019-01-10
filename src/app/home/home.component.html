@@ -4,7 +4,7 @@
 <ng-template #homePage>
     <!-- Title Section -->
     <section class="portfolio-title" [ngStyle]="{backgroundImage: getBackground()}">
-        <div class="motto-image" fxLayout="row">
+        <div class="motto-image" fxLayout="row" fxLayout.lt-lg="column-reverse">
             <div class="motto" fxFlex="0 1">
                 <h1>{{ titleData.motto }}</h1>
                 <h2>{{ titleData.subheading }}</h2>
