@@ -14,8 +14,8 @@
             </div>
         </div>
         <nav>
-            <ul>
-                <li *ngFor="let link of titleData.links">{{ link | uppercase }}</li>
+            <ul fxLayout="row" fxLayoutAlign="center">
+                <li fxFlex="0 1" *ngFor="let link of titleData.links">{{ link | uppercase }}</li>
             </ul>
         </nav>
     </section>

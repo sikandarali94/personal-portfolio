@@ -40,3 +40,17 @@
     margin-top: 5px;
   }
 }
+
+nav {
+  position:absolute;
+  bottom:70px;
+  width:100%;
+  ul {
+    width:27%;
+    margin: auto;
+    li {
+      text-align: center;
+      color:$text-primary;
+    }
+  }
+}
