@@ -28,29 +28,49 @@
     float:right;
     border-radius: 50%;
   }
+
 }
 
 .motto {
+
   h1 {
     @extend %title-text;
   }
+
   h2 {
     @extend %title-text;
     text-align: right;
     margin-top: 5px;
   }
+
 }
 
 nav {
   position:absolute;
   bottom:70px;
   width:100%;
+
   ul {
     width:27%;
     margin: auto;
+
     li {
       text-align: center;
       color:$text-primary;
+      height:10px;
+
+      &:hover, &:active, &:focus {
+        color: $primary-color;
+        border-bottom: 2px $primary-color solid;
+        transition: color .2s, border .2s;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
     }
+
   }
+
 }
