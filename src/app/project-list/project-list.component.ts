@@ -24,10 +24,10 @@ export class ProjectListComponent implements OnInit, OnDestroy {
   constructor(private fb: FirebaseService) { }
 
   ngOnInit() {
-    /* The reason we are fetching common data from the project list component is because if we show the spinner when the project list data
+    /* The reason we are fetching common data from the project list component is because when we show the spinner after the list data
     has been fetched, at this point we initialize the common component. This issue is that the common component then sends a request to
     fetch the common data, and when the spinner is removed at the point of when the request for common is sent, we momentarily see the
-    contact section and the footer section missing some data because it waiting for the request to be successful. This looks bad in terms
+    contact section and the footer section missing some data because it waiting for its request to be successful. This looks bad in terms
     of UI and this is why it is better to fetch the common data from the project list component.
      */
     if (!this.fb.dataCommonStored) {
@@ -78,7 +78,7 @@ export class ProjectListComponent implements OnInit, OnDestroy {
     this.fb.dataProjectsRetrieved.unsubscribe();
 
     // When project list component is destroyed, unsubscribe from the dataCommonRetrieved observable.
-    this.fb.dataProjectsRetrieved.unsubscribe();
+    this.fb.dataCommonRetrieved.unsubscribe();
   }
 
 }
