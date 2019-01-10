@@ -42,8 +42,9 @@ export class ProjectListComponent implements OnInit, OnDestroy {
       );
     } else {
       this.commonData = this.fb.fetchCommonData(); // Fetch data for the common component.
-      this.hideSpinner();
+      this.hideSpinner(); // Check to see if we can hide the spinner.
     }
+
     // If the data for the project list page has not been retrieved and stored in the Firebase service.
     if (!this.fb.dataProjectsStored) {
       this.fb.getProjectsData(); // Call method in Firebase service that gets data for project list page from Firebase.

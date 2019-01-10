@@ -10,6 +10,8 @@ import {About} from './about/about.model';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+    commonData; // This holds data for the common component.
+
     showSpinner = true; // Initially, show the loading spinner.
 
     homeData; // homeData will store data for the home page once the Firebase service has successfully retrieved the data.
@@ -26,6 +28,21 @@ export class HomeComponent implements OnInit, OnDestroy {
     constructor(private fb: FirebaseService) { }
 
     ngOnInit() {
+        if (!this.fb.dataCommonStored) {
+            /* Call method in Firebase service that gets the data for common component from the Firebase database.*/
+            this.fb.getCommonData();
+            /* When data has been fetched from Firebase successfully */
+            this.fb.dataCommonRetrieved.subscribe(
+                () => {
+                    this.commonData = this.fb.fetchCommonData(); // Fetch data for the common component.
+                    this.hideSpinner(); // Check to see if we can hide the spinner.
+                }
+            );
+        } else {
+            this.commonData = this.fb.fetchCommonData(); // Fetch data for the common component.
+            this.hideSpinner(); // Check to see if we can hide the spinner.
+        }
+
         if (!this.fb.dataHomeStored) {
             /* Call method in Firebase service that gets the data for home page from the Firebase database.*/
             this.fb.getHomeData();
@@ -36,7 +53,7 @@ export class HomeComponent implements OnInit, OnDestroy {
                     this.titleData = this.homeData.title; // Store data for title section.
                     this.projectsData = this.homeData.projects; // Store data for projects section.
                     this.aboutData = this.homeData.about; // Store data for about section.
-                    this.showSpinner = false; // Hide the spinner when data has been fetched and stored in the component.
+                    this.hideSpinner(); // Check to see if we can hide the spinner.
                 }
             );
         } else {
@@ -44,12 +61,23 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.titleData = this.homeData.title; // Store data for title section.
             this.projectsData = this.homeData.projects; // Store data for projects section.
             this.aboutData = this.homeData.about; // Store data for about section.
-            this.showSpinner = false; // Hide the spinner when data has been fetched and stored in the component.
+            this.hideSpinner(); // Check to see if we can hide the spinner.
+        }
+    }
+
+    hideSpinner() {
+        // Has the home data and the common data both been fetched from Firebase?
+        if (this.fb.dataHomeStored && this.fb.dataCommonStored) {
+            this.showSpinner = false; // If so, hide the spinner.
         }
     }
 
     ngOnDestroy() {
-        this.fb.dataHomeRetrieved.unsubscribe(); // When home component is destroyed, unsubscribe from the dataHomeRetrieved observable.
+        // When home component is destroyed, unsubscribe from the dataHomeRetrieved observable.
+        this.fb.dataHomeRetrieved.unsubscribe();
+
+        // When home component component is destroyed, unsubscribe from the dataCommonRetrieved observable.
+        this.fb.dataCommonRetrieved.unsubscribe();
     }
 
 }
