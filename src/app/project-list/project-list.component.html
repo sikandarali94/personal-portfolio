@@ -1,17 +1,22 @@
-<!-- Project List Section -->
-<section>
-    <div class="image-header">
-        <img [src]="headerImg" alt="header-image" width="100px">
-    </div>
-    <div class="projects">
-        <div class="statement">
-            <p>{{ projectsData.statement }}</p>
+<!-- Show spinner when data is being fetched -->
+<app-loading-spinner *ngIf="showSpinner; else listPage"></app-loading-spinner>
+<!-- Show ng-template when data has been fetched and spinner is set to hidden -->
+<ng-template #listPage>
+    <!-- Project List Section -->
+    <section>
+        <div class="image-header">
+            <img [src]="headerImg" alt="header-image" width="100px">
         </div>
-        <!-- List Section -->
-        <div class="list">
-            <app-list [projects]="listData"></app-list>
+        <div class="projects">
+            <div class="statement">
+                <p>{{ projectsData.statement }}</p>
+            </div>
+            <!-- List Section -->
+            <div class="list">
+                <app-list [projects]="listData"></app-list>
+            </div>
         </div>
-    </div>
-</section>
-<!-- Contact and Footer Section -->
-<app-common></app-common>
+    </section>
+    <!-- Contact and Footer Section -->
+    <app-common [common]="commonData"></app-common>
+</ng-template>

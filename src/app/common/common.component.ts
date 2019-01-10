@@ -1,5 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {FirebaseService} from '../firebase.service';
+import {Component, OnInit, Input} from '@angular/core';
 import {Contact} from './contact/contact.model';
 import {Footer} from './footer/footer.model';
 
@@ -8,9 +7,8 @@ import {Footer} from './footer/footer.model';
   templateUrl: './common.component.html',
   styleUrls: ['./common.component.scss']
 })
-export class CommonComponent implements OnInit, OnDestroy {
-  commonData; // commonData will store data for the common component once the Firebase service has successfully retrieved the data.
-
+export class CommonComponent implements OnInit {
+  @Input() common;
   /* contactData is initialized to follow the convention of the Contact model to populate the contact section.
      */
   contactData: Contact = new Contact([], [[]]);
@@ -18,29 +16,10 @@ export class CommonComponent implements OnInit, OnDestroy {
    */
   footerData: Footer = new Footer('');
 
-  constructor(private fb: FirebaseService) { }
+  constructor() { }
 
   ngOnInit() {
-    if (!this.fb.dataCommonStored) {
-      /* Call method in Firebase service that gets the data for common component from the Firebase database.*/
-      this.fb.getCommonData();
-      /* When data has been fetched from Firebase successfully */
-      this.fb.dataCommonRetrieved.subscribe(
-          () => {
-            this.commonData = this.fb.fetchCommonData(); // Fetch data for the common component.
-            this.contactData = this.commonData.contact; // Store data for contact section.
-            this.footerData = this.commonData.footer; // Store data for footer section.
-          }
-      );
-    } else {
-      this.commonData = this.fb.fetchCommonData(); // Fetch data for the common component.
-      this.contactData = this.commonData.contact; // Store data for contact section.
-      this.footerData = this.commonData.footer; // Store data for footer section.
-    }
+    this.contactData = this.common.contact;
+    this.footerData = this.common.footer;
   }
-
-  ngOnDestroy() {
-    this.fb.dataCommonRetrieved.unsubscribe(); // When common component is destroyed, unsubscribe from the dataCommonRetrieved observable.
-  }
-
 }
