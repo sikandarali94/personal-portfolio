@@ -3,12 +3,14 @@ export class Title {
     public motto: string; // A title should have a motto property of string type.
     public subheading: string; // A title should have a subheading property of string type.
     public img: string; // A title should have a img property of string type.
+    public background: string; // A title should have a background property of string type.
     public links: string[]; // A title should have a links property that holds an array of strings.
 
-    constructor(motto: string, subheading: string, img: string, links: string[]) {
+    constructor(motto: string, subheading: string, img: string, background: string, links: string[]) {
         this.motto = motto;
         this.subheading = subheading;
         this.img = img;
+        this.background = background;
         this.links = links;
     }
 }

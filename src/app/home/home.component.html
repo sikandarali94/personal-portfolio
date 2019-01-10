@@ -3,7 +3,7 @@
 <!-- Show ng-template when data has been fetched and spinner is set to hidden -->
 <ng-template #homePage>
     <!-- Title Section -->
-    <section class="portfolio-title">
+    <section class="portfolio-title" [ngStyle]="{backgroundImage: getBackground()}">
         <div class="motto-image">
             <div class="motto">
                 <h1>{{ titleData.motto }}</h1>
