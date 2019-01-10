@@ -10,6 +10,8 @@ import {About} from './about/about.model';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+    showSpinner = true;
+
     homeData; // homeData will store data for the home page once the Firebase service has successfully retrieved the data.
     /* titleData is initialized to follow the convention of the Title model to populate the title section.
      */
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit, OnDestroy {
                     this.titleData = this.homeData.title; // Store data for title section.
                     this.projectsData = this.homeData.projects; // Store data for projects section.
                     this.aboutData = this.homeData.about; // Store data for about section.
+                    this.showSpinner = false;
                 }
             );
         } else {
@@ -41,6 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.titleData = this.homeData.title; // Store data for title section.
             this.projectsData = this.homeData.projects; // Store data for projects section.
             this.aboutData = this.homeData.about; // Store data for about section.
+            this.showSpinner = false;
         }
     }
 

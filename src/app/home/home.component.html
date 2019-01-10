@@ -1,23 +1,26 @@
-<!-- Title Section -->
-<section class="portfolio-title">
-    <div class="motto-image">
-        <div class="motto">
-            <h1>{{ titleData.motto }}</h1>
-            <h2>{{ titleData.subheading }}</h2>
+<app-loading-spinner *ngIf="showSpinner; else homePage"></app-loading-spinner>
+<ng-template #homePage>
+    <!-- Title Section -->
+    <section class="portfolio-title">
+        <div class="motto-image">
+            <div class="motto">
+                <h1>{{ titleData.motto }}</h1>
+                <h2>{{ titleData.subheading }}</h2>
+            </div>
+            <div class="image">
+                <img [src]="titleData.img" alt="portfolio-portrait-photo" width="200px">
+            </div>
         </div>
-        <div class="image">
-            <img [src]="titleData.img" alt="portfolio-portrait-photo" width="200px">
-        </div>
-    </div>
-    <nav>
-        <ul>
-            <li *ngFor="let link of titleData.links">{{ link | uppercase }}</li>
-        </ul>
-    </nav>
-</section>
-<!-- Projects Section -->
-<app-projects [projects]="projectsData"></app-projects>
-<!-- About Section -->
-<app-about [about]="aboutData"></app-about>
-<!-- Contact and Footer Section -->
-<app-common></app-common>
+        <nav>
+            <ul>
+                <li *ngFor="let link of titleData.links">{{ link | uppercase }}</li>
+            </ul>
+        </nav>
+    </section>
+    <!-- Projects Section -->
+    <app-projects [projects]="projectsData"></app-projects>
+    <!-- About Section -->
+    <app-about [about]="aboutData"></app-about>
+    <!-- Contact and Footer Section -->
+    <app-common></app-common>
+</ng-template>
