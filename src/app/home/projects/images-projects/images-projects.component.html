@@ -1,4 +1,8 @@
 <!-- Project Images -->
 <div class="project-images">
-  <img [src]="image" alt="project-snapshot" width="200px" *ngFor="let image of imagesURL">
+  <div class="grid" fxLayout="row wrap" fxLayoutGap="20px grid">
+    <div class="cell" *ngFor="let image of imagesURL" fxFlex="50">
+      <img [src]="image" alt="project-snapshot" width="200px">
+    </div>
+  </div>
 </div>
