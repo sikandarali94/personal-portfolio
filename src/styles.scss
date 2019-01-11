@@ -9,7 +9,7 @@
   font-weight: 300;
   font-size: 20px;
   text-rendering: optimizeLegibility;
-  color: black;
+  color: $text-primary;
 }
 
 h1 {
@@ -19,7 +19,10 @@ h1 {
 
 h2 {
   font-size:120%;
-  color: $text-primary;
+}
+
+p {
+  line-height: 185%;
 }
 
 ul {
@@ -29,6 +32,23 @@ ul {
 li {
   list-style: none;
   font-size:80%;
+}
+
+button {
+  background-color: transparent;
+  border: 2px $primary-color solid;
+  padding: 10px 55px;
+  font-size: 80%;
+  margin-top: 20px;
+
+  &:hover, &focus, &:active {
+    background-color: $primary-color;
+    transition: background-color .2s;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 /* Media Queries */

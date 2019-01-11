@@ -8,14 +8,14 @@
       </div>
       <app-technologies fxFlex="20" [technologies]="project.technologies"></app-technologies>
     </div>
-    <div class="attributes-summary">
-      <div class="attributes-button">
+    <div class="attributes-summary" fxLayout="row">
+      <div class="attributes-button" fxFlex="27">
         <app-attributes-projects [attributes]="project.attributes"></app-attributes-projects>
         <div class="view-button">
           <button>View Project</button>
         </div>
       </div>
-      <div class="project-summary">
+      <div class="project-summary" fxFlex="73">
         <p>{{ project.summary }}</p>
       </div>
     </div>

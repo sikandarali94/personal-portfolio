@@ -11,6 +11,14 @@ h2 {
   margin-top: 15px;
 }
 
+p {
+  font-size: 90%;
+}
+
+button {
+  margin-top:20px;
+}
+
 .project {
   width: $aligner;
   margin: auto;
@@ -18,4 +26,8 @@ h2 {
 
 .project:not(:last-child) {
   padding-bottom:$white-space;
+}
+
+.attributes-summary {
+  margin-top:90px;
 }
