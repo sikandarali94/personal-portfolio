@@ -1,12 +1,12 @@
 <!-- Projects Section -->
 <section>
   <div class="project" *ngFor="let project of projects">
-    <div class="project-heading">
-      <div class="heading">
+    <div class="project-heading" fxLayout="row">
+      <div class="heading" fxFlex="80">
         <h1>{{ project.title }}</h1>
         <h2>{{ project.subheading }}</h2>
       </div>
-      <app-technologies [technologies]="project.technologies"></app-technologies>
+      <app-technologies fxFlex="20" [technologies]="project.technologies"></app-technologies>
     </div>
     <div class="attributes-summary">
       <div class="attributes-button">

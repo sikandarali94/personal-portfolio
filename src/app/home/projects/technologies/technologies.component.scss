@@ -1,0 +1,12 @@
+div {
+  text-align: right;
+}
+
+img {
+  width:60px;
+  height:60px;
+}
+
+img:not(:last-child) {
+  margin-right:20px;
+}

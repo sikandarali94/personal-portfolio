@@ -1,3 +1,21 @@
+// Import global variables
+@import "~src/variables";
+
+/* Projects Section */
 section {
-  background-color: red;
+  background-color: $secondary-color;
+  padding: $white-space 0;
+}
+
+h2 {
+  margin-top: 15px;
+}
+
+.project {
+  width: $aligner;
+  margin: auto;
+}
+
+.project:not(:last-child) {
+  padding-bottom:$white-space;
 }

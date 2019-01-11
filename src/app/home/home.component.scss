@@ -17,8 +17,12 @@
   background-position: center;
 }
 
+h2 {
+  color: $secondary-color;
+}
+
 .motto-image{
-  width:77%;
+  width:$aligner;
   margin:auto;
   position: relative;
   top:40%;
