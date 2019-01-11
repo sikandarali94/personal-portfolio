@@ -30,3 +30,41 @@ li {
   list-style: none;
   font-size:80%;
 }
+
+/* Media Queries */
+@media (max-width: 1260px) {
+  h1 {
+    font-size: 250%;
+  }
+  h2 {
+    font-size: 105%;
+  }
+}
+
+@media (max-width: 690px) {
+  h1 {
+    color: #2ecc71;
+    font-size: 200%;
+  }
+  h2 {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: 180%;
+  }
+  h2 {
+    font-size: 82%;
+  }
+}
+
+@media (max-width: 485px) {
+  h1 {
+    font-size: 140%;
+  }
+  h2 {
+    font-size: 69%;
+  }
+}

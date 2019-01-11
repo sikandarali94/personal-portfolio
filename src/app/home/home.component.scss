@@ -35,6 +35,7 @@
 
   h1 {
     @extend %title-text;
+    margin-top:10px;
   }
 
   h2 {
@@ -73,4 +74,23 @@ nav {
 
   }
 
+}
+
+/* Media Queries */
+@media (max-width: 1260px) {
+  .motto-image img {
+    width: 180px;
+  }
+}
+
+@media (max-width: 520px) {
+  .motto-image img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 690px) {
+  li {
+    font-size:60%;
+  }
 }

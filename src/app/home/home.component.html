@@ -4,17 +4,42 @@
 <ng-template #homePage>
     <!-- Title Section -->
     <section class="portfolio-title" [ngStyle]="{backgroundImage: getBackground()}">
-        <div class="motto-image" fxLayout="row" fxLayout.lt-lg="column-reverse">
+        <div
+                class="motto-image"
+                fxLayout="row"
+                fxLayout.lt-lg="column-reverse"
+                [ngStyle.lt-lg]="{top: '25%'}"
+        >
             <div class="motto" fxFlex="0 1">
-                <h1>{{ titleData.motto }}</h1>
-                <h2>{{ titleData.subheading }}</h2>
+                <h1
+                        [ngStyle.lt-lg]="{width: '100%', textAlign: 'center'}"
+                        [ngStyle.lt-md]="{width: '100%', textAlign: 'center'}"
+                        [ngStyle.gt-md]="{width: '575px'}"
+                >
+                    {{ titleData.motto }}
+                </h1>
+                <h2
+                        [ngStyle.lt-lg]="{width: '100%', textAlign: 'center'}"
+                        [ngStyle.gt-md]="{textAlign: 'right'}"
+                >
+                    {{ titleData.subheading }}
+                </h2>
             </div>
             <div class="image" fxFlex="0 1">
-                <img [src]="titleData.img" alt="portfolio-portrait-photo" width="200px">
+                <img
+                        [ngStyle.lt-lg]="{float: 'none', position: 'relative', left: '50%',
+                        transform: 'translateX(-50%)'}"
+
+                        [ngStyle.gt-md]="{float:'right'}"
+
+                        [src]="titleData.img"
+                        alt="portfolio-portrait-photo"
+                        width="200px"
+                >
             </div>
         </div>
         <nav>
-            <ul fxLayout="row" fxLayoutAlign="center">
+            <ul fxLayout="row" fxLayoutAlign="center" [ngStyle.lt-lg]="{width: '50%'}" [ngStyle.lt-sm]="{width: '80%'}">
                 <li fxFlex="0 1" *ngFor="let link of titleData.links">{{ link | uppercase }}</li>
             </ul>
         </nav>
