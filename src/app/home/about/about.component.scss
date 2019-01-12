@@ -8,7 +8,7 @@ section {
 }
 
 h1 {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 p {
@@ -17,4 +17,12 @@ p {
 
 .about-info {
   @extend %aligner;
+}
+
+
+// Media Queries
+@media (max-width: 690px) {
+  p {
+    font-size:70%;
+  }
 }

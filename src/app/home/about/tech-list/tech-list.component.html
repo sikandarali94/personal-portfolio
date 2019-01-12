@@ -1,11 +1,11 @@
 <!-- Technology List -->
-<div fxLayout="row">
-  <div fxFlex="15">
+<div fxLayout="row" fxLayout.lt-lg="column">
+  <div class="heading" [ngStyle.lt-lg]="{textAlign: 'center', marginBottom: '50px'}" fxFlex="15">
     <p>Technologies</p>
   </div>
-  <div fxFlex="85">
+  <div class="tech-list" fxFlex="85">
     <ul fxLayout="row wrap">
-      <li fxFlex="33.33" *ngFor="let tech of techList">{{tech}}</li>
+      <li fxFlex="33.33" [ngStyle.lt-lg]="{textAlign: 'center'}" *ngFor="let tech of techList">{{tech}}</li>
     </ul>
   </div>
 </div>

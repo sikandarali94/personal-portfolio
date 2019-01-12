@@ -7,3 +7,11 @@ li {
   font-size:70%;
   margin-bottom:20px;
 }
+
+
+// Media Queries
+@media (max-width: 690px) {
+  .heading p, li {
+    font-size:60%;
+  }
+}

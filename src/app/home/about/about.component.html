@@ -1,7 +1,9 @@
 <!-- About Section -->
 <section>
   <div class="about-info">
-    <h1>{{ about.title }}</h1>
+    <div [ngStyle.lt-lg]="{textAlign: 'center'}" [ngStyle.gt-md]="{textAlign: 'left'}">
+      <h1>{{ about.title }}</h1>
+    </div>
     <p>{{ about.description }}</p>
     <app-tech-list [techList]="about.technologies"></app-tech-list>
   </div>
