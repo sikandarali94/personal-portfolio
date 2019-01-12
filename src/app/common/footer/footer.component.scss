@@ -1,4 +1,16 @@
+// Import Global variables
+@import '~src/_variables.scss';
+
 /* Footer Section */
 footer {
-  background-color: black;
+  background-color: $shade;
+  padding: ($white-space - 110px) 0;
+}
+
+.footer-text {
+  text-align:center;
+}
+
+p {
+  font-size:65%;
 }
