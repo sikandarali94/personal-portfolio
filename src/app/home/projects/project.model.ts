@@ -7,6 +7,7 @@ export class Project {
     public technologies: string[]; // A project should have a technologies property that holds an array of strings.
     public title: string; // A project should have a title property of string type.
     public img: string[]; // A project should have an img property that holds an array of strings.
+    public route: string; // A project should have a route property of string type.
 
     constructor(
         attributes: string[][],
@@ -15,7 +16,8 @@ export class Project {
         summary: string,
         technologies: string[],
         title: string,
-        img: string[]
+        img: string[],
+        route: string
     ) {
         this.attributes = attributes;
         this.role = role;
@@ -24,5 +26,6 @@ export class Project {
         this.technologies = technologies;
         this.title = title;
         this.img = img;
+        this.route = route;
     }
 }

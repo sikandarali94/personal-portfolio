@@ -15,7 +15,7 @@
                 [ngStyle.lt-lg]="{textAlign: 'center', marginBottom: '80px'}"
                 [ngStyle.gt-md]="{textAlign: 'left'}"
                 class="view-button">
-          <button>View Project</button>
+          <button (click)="onView(project.route)">View Project</button>
         </div>
       </div>
       <div class="project-summary" fxFlex="73">
