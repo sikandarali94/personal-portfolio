@@ -1,4 +1,20 @@
+// Import Global variables
+@import "~src/variables";
+
 /* About Section */
 section {
-  background-color: blue;
+  background-color: $tertiary-color;
+  padding: $white-space 0;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+p {
+  margin-bottom:70px;
+}
+
+.about-info {
+  @extend %aligner;
 }

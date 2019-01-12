@@ -1,4 +1,11 @@
 <!-- Technology List -->
-<ul>
-  <li *ngFor="let tech of techList">{{tech}}</li>
-</ul>
+<div fxLayout="row">
+  <div fxFlex="15">
+    <p>Technologies</p>
+  </div>
+  <div fxFlex="85">
+    <ul fxLayout="row wrap">
+      <li fxFlex="33.33" *ngFor="let tech of techList">{{tech}}</li>
+    </ul>
+  </div>
+</div>

@@ -3,9 +3,16 @@
 // Colors
 $primary-color: #2ecc71;
 $secondary-color: #2c3e50;
-$tertiary-color: #2f2f2f;
+$tertiary-color: #4d5d6c;
+$shade: #2f2f2f;
 $text-primary: #f3f3f3;
 
 // Sizes
 $aligner:80%;
 $white-space: 150px;
+
+// Extends
+%aligner {
+  width:$aligner;
+  margin:auto;
+}

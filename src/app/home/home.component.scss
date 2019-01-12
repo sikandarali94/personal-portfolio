@@ -22,8 +22,7 @@ h2 {
 }
 
 .motto-image{
-  width:$aligner;
-  margin:auto;
+  @extend %aligner;
   position: relative;
   top:40%;
   transform: translateY(-50%);
