@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class FirebaseService {
@@ -21,7 +22,7 @@ export class FirebaseService {
     private projectsData; // This stores data for the project list.
     private detailData; // This stores data for the project detail page.
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private router: Router) {}
 
     getHomeData() {
         /* GET data from Firebase to populate the home page in the app. Subscribing here because we want to store the retrieved data within
@@ -34,7 +35,7 @@ export class FirebaseService {
                 this.dataHomeRetrieved.next(); // Indicate home page data has been retrieved.
             },
             error => {
-                console.log(error);
+                this.router.navigate(['/error', 'server-issue']);
             }
         );
     }
@@ -50,7 +51,7 @@ export class FirebaseService {
                 this.dataCommonRetrieved.next(); // Indicate common component data has been retrieved.
             },
             error => {
-                console.log(error);
+                this.router.navigate(['/error', 'server-issue']);
             }
         );
     }
@@ -77,7 +78,7 @@ export class FirebaseService {
                 this.dataProjectsRetrieved.next(); // Indicate project list component data has been retrieved.
             },
             error => {
-                console.log(error);
+                this.router.navigate(['/error', 'server-issue']);
             }
         );
     }
@@ -99,7 +100,7 @@ export class FirebaseService {
                 this.dataDetailRetrieved.next(); // Indicate project detail page data has been retrieved.
             },
             error => {
-                console.log(error);
+                this.router.navigate(['/error', 'server-issue']);
             }
         );
     }
@@ -117,7 +118,11 @@ export class FirebaseService {
     }
 
     fetchDetailData(route: string) {
-        return this.detailData[route]; // return data for project detail page.
+        if (!this.detailData[route]) {
+            this.router.navigate(['/error', 'not-found']);
+        } else {
+            return this.detailData[route]; // return data for project detail page.
+        }
     }
 
     fetchHeader() {

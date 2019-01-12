@@ -23,7 +23,7 @@ import { ImagesProjectsComponent } from './home/projects/images-projects/images-
 import { ImagesPhasesComponent } from './project-detail/phases/images-phases/images-phases.component';
 import { AttributesProjectsComponent } from './home/projects/attributes-projects/attributes-projects.component';
 import { AttributesSummaryComponent } from './project-detail/summary/attributes-summary/attributes-summary.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { ErrorComponent } from './error/error.component';
 
 import { FirebaseService } from './firebase.service';
 import { CommonComponent } from './common/common.component';
@@ -49,7 +49,7 @@ import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.co
         ImagesPhasesComponent,
         AttributesProjectsComponent,
         AttributesSummaryComponent,
-        NotFoundComponent,
+        ErrorComponent,
         CommonComponent,
         LoadingSpinnerComponent
     ],
