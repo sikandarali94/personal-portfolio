@@ -29,5 +29,12 @@ button {
 }
 
 .attributes-summary {
-  margin-top:90px;
+  margin-top:50px;
+}
+
+// Media Queries
+@media (max-width: 690px) {
+  p {
+    font-size:70%;
+  }
 }

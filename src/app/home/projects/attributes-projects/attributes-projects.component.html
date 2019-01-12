@@ -1,4 +1,10 @@
 <!-- Project Attributes -->
 <div class="project-attributes">
-  <p *ngFor="let attribute of attributes"><span class="attribute">{{ attribute[0] }}</span> {{ attribute[1] }} </p>
+  <p
+          [ngStyle.lt-lg]="{textAlign: 'center'}"
+          [ngStyle.gt-md]="{textAlign: 'left'}"
+          *ngFor="let attribute of attributes">
+    <span class="attribute">{{ attribute[0] }}</span>
+     {{ attribute[1] }}
+  </p>
 </div>

@@ -1,8 +1,8 @@
 <!-- Project Images -->
 <div class="project-images">
-  <div class="grid" fxLayout="row wrap" fxLayoutGap="20px grid">
-    <div class="cell" *ngFor="let image of imagesURL" fxFlex="50">
-      <img [src]="image" alt="project-snapshot" width="200px">
+  <div class="grid">
+    <div [ngStyle]="{backgroundImage: getBackground(image)}" class="cell" *ngFor="let image of imagesURL">
+      <img/>
     </div>
   </div>
 </div>

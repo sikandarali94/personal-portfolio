@@ -1,17 +1,20 @@
 <!-- Projects Section -->
 <section>
   <div class="project" *ngFor="let project of projects">
-    <div class="project-heading" fxLayout="row">
-      <div class="heading" fxFlex="80">
+    <div class="project-heading" fxLayout="row" fxLayout.lt-lg="column">
+      <div class="heading" [ngStyle.lt-lg]="{textAlign: 'center', marginBottom: '50px'}" fxFlex="80">
         <h1>{{ project.title }}</h1>
         <h2>{{ project.subheading }}</h2>
       </div>
       <app-technologies fxFlex="20" [technologies]="project.technologies"></app-technologies>
     </div>
-    <div class="attributes-summary" fxLayout="row">
+    <div class="attributes-summary" fxLayout.gt-md="row" fxLayout.lt-lg="column">
       <div class="attributes-button" fxFlex="27">
         <app-attributes-projects [attributes]="project.attributes"></app-attributes-projects>
-        <div class="view-button">
+        <div
+                [ngStyle.lt-lg]="{textAlign: 'center', marginBottom: '80px'}"
+                [ngStyle.gt-md]="{textAlign: 'left'}"
+                class="view-button">
           <button>View Project</button>
         </div>
       </div>

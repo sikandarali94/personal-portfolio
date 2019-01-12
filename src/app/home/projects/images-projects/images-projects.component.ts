@@ -14,4 +14,8 @@ export class ImagesProjectsComponent implements OnInit {
   ngOnInit() {
   }
 
+  getBackground(image: string) {
+    return `url(${image})`;
+  }
+
 }
