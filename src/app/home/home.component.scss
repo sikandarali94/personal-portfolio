@@ -21,6 +21,11 @@ h2 {
   color: $secondary-color;
 }
 
+a {
+  text-decoration: none;
+  font-size:100%;
+}
+
 .motto-image{
   @extend %aligner;
   position: relative;

@@ -40,7 +40,11 @@
         </div>
         <nav>
             <ul fxLayout="row" fxLayoutAlign="center" [ngStyle.lt-lg]="{width: '50%'}" [ngStyle.lt-sm]="{width: '80%'}">
-                <li fxFlex="0 1" *ngFor="let link of titleData.links">{{ link | uppercase }}</li>
+                <li
+                        fxFlex="0 1"
+                        *ngFor="let link of titleData.links"
+                ><a [ngx-scroll-to]="link[1]">{{ link[0] | uppercase }}</a>
+                </li>
             </ul>
         </nav>
     </section>

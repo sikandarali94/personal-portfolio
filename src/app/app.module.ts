@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,7 +57,8 @@ import { LoadingSpinnerComponent } from './ui/loading-spinner/loading-spinner.co
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        ScrollToModule.forRoot()
     ],
     providers: [FirebaseService],
     bootstrap: [AppComponent]
