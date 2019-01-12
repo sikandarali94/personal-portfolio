@@ -2,10 +2,6 @@
 @import "~src/variables";
 
 /* Contact Links */
-.contact-links {
-  float: right;
-}
-
 a {
   margin-bottom: 5px;
   font-size:90%;
@@ -15,5 +11,13 @@ a {
   &:active, &:focus, &:hover {
     color: $secondary-color;
     transition:color .2s;
+  }
+}
+
+
+// Media Queries
+@media (max-width: 1279px) {
+  a {
+    font-size:90%;
   }
 }

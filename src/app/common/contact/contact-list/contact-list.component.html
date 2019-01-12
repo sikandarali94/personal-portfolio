@@ -1,5 +1,9 @@
 <!-- Contact Links -->
-<div class="contact-links">
+<div
+        class="contact-links"
+        [ngStyle.lt-lg]="{float: 'none', textAlign: 'center'}"
+        [ngStyle.gt-md]="{float: 'right', textAlign: 'right'}"
+>
   <p *ngFor="let link of links">
     <a [href]="link[1]">{{ link[0] }}</a>
   </p>

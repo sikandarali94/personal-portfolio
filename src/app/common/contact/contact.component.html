@@ -1,7 +1,7 @@
 <!-- Contact Section -->
 <section>
-  <div class="greeting-links" fxLayout="row">
-    <div class="contact-greeting" fxFlex="50">
+  <div class="greeting-links" fxLayout="row" fxLayout.lt-lg="column">
+    <div class="contact-greeting" fxFlex="50" [ngStyle.lt-lg]="{ textAlign: 'center', marginBottom: '40px' }">
       <p *ngFor="let heading of contact.headings">{{ heading }}</p>
     </div>
     <app-contact-list fxFlex="50" [links]="contact.links"></app-contact-list>
