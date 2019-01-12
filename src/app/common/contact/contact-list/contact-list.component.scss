@@ -1,0 +1,19 @@
+// Import Global variables
+@import "~src/variables";
+
+/* Contact Links */
+.contact-links {
+  float: right;
+}
+
+a {
+  margin-bottom: 5px;
+  font-size:90%;
+  &:link, &:visited {
+    text-decoration: none;
+  }
+  &:active, &:focus, &:hover {
+    color: $secondary-color;
+    transition:color .2s;
+  }
+}

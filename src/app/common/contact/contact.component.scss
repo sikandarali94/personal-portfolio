@@ -1,4 +1,20 @@
+//Import Global variables
+@import "~src/variables";
+
 /* Contact Section */
 section {
-  background-color: red;
+  background-color: $primary-color;
+  padding: ($white-space - 90px) 0;
+}
+
+p {
+  font-size:110%;
+}
+
+p:first-child {
+  margin-bottom: 15px;
+}
+
+.greeting-links {
+  @extend %aligner;
 }

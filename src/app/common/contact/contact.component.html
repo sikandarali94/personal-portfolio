@@ -1,9 +1,9 @@
 <!-- Contact Section -->
 <section>
-  <div class="greeting-links">
-    <div class="contact-greeting">
+  <div class="greeting-links" fxLayout="row">
+    <div class="contact-greeting" fxFlex="50">
       <p *ngFor="let heading of contact.headings">{{ heading }}</p>
     </div>
-    <app-contact-list [links]="contact.links"></app-contact-list>
+    <app-contact-list fxFlex="50" [links]="contact.links"></app-contact-list>
   </div>
 </section>
