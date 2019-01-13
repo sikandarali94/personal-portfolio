@@ -33,15 +33,60 @@
 
 .git-link a {
   text-decoration: none;
-  border-bottom: 2px transparent solid;
-  padding-bottom:10px;
+  border-bottom: $primary-border;
+  padding: 0 20px 15px 20px;
 
   &:hover {
     cursor:pointer;
   }
 
   &:hover, &:focus, &:active {
-    border-bottom: $primary-border;
-    transition: border .2s;
+    color: $primary-color;
+    transition: color .2s;
+  }
+}
+
+
+// Media Queries
+@media (max-width: 1279px) {
+  .project-title {
+    font-size: 180%;
+  }
+
+  .project-tech-icons img {
+    width:70px;
+    height:70px;
+  }
+
+  .project-main-image {
+    height:700px;
+  }
+
+  .attributes-git {
+    width: 100%;
+    margin: 20px 0 0 0;
+  }
+
+  .git-link {
+    text-align: center;
+    a {
+      font-weight: bold;
+      font-size: 115%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .project-title {
+    font-size: 120%;
+  }
+
+  .project-tech-icons img {
+    width:50px;
+    height:50px;
+  }
+
+  .project-main-image {
+    height:250px;
   }
 }

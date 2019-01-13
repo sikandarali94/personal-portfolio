@@ -1,6 +1,6 @@
 <!-- Project Attributes -->
 <div class="attributes">
-  <ul fxLayout="row" fxLayoutGap="70px">
+  <ul fxLayout.gt-md="row" fxLayout.lt-lg="column" fxLayoutGap.gt-md="70px" fxLayoutGap.lt-lg="20px">
     <li *ngFor="let key of keys">
       <p class="key">{{ key | titlecase }}</p>
       <p class="value">{{ attributes[key] }}</p>

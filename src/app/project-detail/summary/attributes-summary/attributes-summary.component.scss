@@ -14,3 +14,22 @@ p {
 .attributes {
   margin-top: 50px;
 }
+
+
+// Media Queries
+@media (max-width: 1279px) {
+  li {
+    font-size: 115%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  li {
+    font-size: 100%;
+  }
+
+  .attributes {
+    margin-top: 0;
+  }
+}

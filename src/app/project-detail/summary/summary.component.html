@@ -1,7 +1,7 @@
 <!-- Project Summary -->
 <div class="project-summary">
   <div
-          [ngStyle]="{ backgroundImage: getBackground(summary.banner) }"
+          [ngStyle.gt-xs]="{ backgroundImage: getBackground(summary.banner) }"
           fxLayout="column"
           fxLayoutAlign="center center"
           class="project-main-image"
@@ -11,10 +11,15 @@
       <img *ngFor="let tech of summary.technologies" [src]="tech" alt="technology-icon" width="50px">
     </div>
   </div>
-  <div class="attributes-git" fxLayout="row">
+  <div class="attributes-git"
+       fxLayout.gt-md="row"
+       fxLayout.lt-lg="column"
+       fxLayoutGap.gt-md="0px"
+       fxLayoutGap.lt-lg="100px"
+  >
     <div class="project-attributes" fxFlex="70">
       <div class="title">
-        <p>{{ summary.title }}</p>
+        <p [ngStyle.lt-lg]="{ display: 'none' }" [ngStyle.gt-md]="{ display: 'block' }">{{ summary.title }}</p>
       </div>
       <!-- Project Attributes -->
       <app-attributes-summary [attributes]="summary.attributes"></app-attributes-summary>
