@@ -11,6 +11,9 @@ $text-primary: #f3f3f3;
 $aligner:80%;
 $white-space: 150px;
 
+// Border
+$primary-border: 2px $primary-color solid;
+
 // Extends
 %aligner {
   width:$aligner;

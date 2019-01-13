@@ -1,9 +1,9 @@
 <!-- Project Attributes -->
 <div class="attributes">
-  <ul>
+  <ul fxLayout="row" fxLayoutGap="70px">
     <li *ngFor="let key of keys">
-      <p>{{ key | titlecase }}</p>
-      <p>{{ attributes[key] }}</p>
+      <p class="key">{{ key | titlecase }}</p>
+      <p class="value">{{ attributes[key] }}</p>
     </li>
   </ul>
 </div>

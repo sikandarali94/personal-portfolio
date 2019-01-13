@@ -1,0 +1,47 @@
+// Import Global variables
+@import "~src/variables";
+
+/* Project Summary */
+.project-summary {
+  @extend %aligner;
+}
+
+.project-main-image {
+  height: 900px;
+  background-size: cover;
+  background-position: center;
+  margin-top:80px;
+  padding-bottom: 60px;
+}
+
+.project-title {
+  font-size:250%;
+  font-weight:bold;
+}
+
+.project-tech-icons img {
+  display: inline;
+  width:90px;
+  height:90px;
+  margin-top:20px;
+}
+
+.attributes-git {
+  width: 80%;
+  margin: 80px auto 0 auto;
+}
+
+.git-link a {
+  text-decoration: none;
+  border-bottom: 2px transparent solid;
+  padding-bottom:10px;
+
+  &:hover {
+    cursor:pointer;
+  }
+
+  &:hover, &:focus, &:active {
+    border-bottom: $primary-border;
+    transition: border .2s;
+  }
+}

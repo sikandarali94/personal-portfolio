@@ -70,7 +70,7 @@ nav {
 
       &:hover, &:active, &:focus {
         color: $primary-color;
-        border-bottom: 2px $primary-color solid;
+        border-bottom: $primary-border;
         transition: color .2s, border .2s;
       }
 

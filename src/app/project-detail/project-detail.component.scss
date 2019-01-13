@@ -1,4 +1,26 @@
+// Import Global variables
+@import "~src/_variables.scss";
+
 /* Project Detail Page */
 section {
-  background-color: red;
+  background-color: $secondary-color;
+  padding: ($white-space - 80px) 0;
+}
+
+.image-header {
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+  border: 2px transparent solid;
+
+  &:hover, &:focus, &active {
+    border: $primary-border;
+    transition: border .2s;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 }

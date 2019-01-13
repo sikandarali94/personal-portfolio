@@ -11,12 +11,17 @@ export class SummaryComponent implements OnInit {
   @Input() summary: Summary = new Summary(
       '',
       {client: '', date: '', role: ''},
-      [[]]
+      [[]],
+      ''
       );
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getBackground(image: string): string {
+    return `url(${image})`;
   }
 
 }
