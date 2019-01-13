@@ -1,4 +1,4 @@
 <!-- Phase Images -->
 <div class="phase-images">
-  <img *ngFor="let image of images" [src]="image" alt="phase-image" width="100px">
+<div *ngFor="let image of images" [ngStyle]="{ backgroundImage: getBackground(image) }" class="phase-image"></div>
 </div>

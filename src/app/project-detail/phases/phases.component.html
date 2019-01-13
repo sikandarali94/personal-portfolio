@@ -1,7 +1,9 @@
 <!-- Project Phases Section -->
-<section *ngFor="let phase of phases">
-  <h1>{{ phase.heading }}</h1>
-  <p>{{ phase.process }}</p>
-  <!-- Phase Images -->
-  <app-images-phases [images]="phase.images"></app-images-phases>
+<section>
+  <div class="phase" *ngFor="let phase of phases">
+    <h1>{{ phase.heading }}</h1>
+    <p style="white-space: pre-line">{{ phase.process }}</p>
+    <!-- Phase Images -->
+    <app-images-phases [images]="phase.images"></app-images-phases>
+  </div>
 </section>

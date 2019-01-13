@@ -1,4 +1,33 @@
+//Import Global Variables
+@import "~src/_variables.scss";
+
 /* Project Phases Section */
 section {
-  background-color: blue;
+  background-color: $tertiary-color;
+  padding: $white-space 0;
+}
+
+.phase {
+  @extend %aligner;
+  &:not(:last-child) {
+    margin-bottom: $white-space;
+  }
+}
+
+p {
+  width: 70%;
+  margin: 60px 0;
+}
+
+// Media Queries
+@media (max-width: 1279px) {
+  p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 690px) {
+  p {
+    font-size:70%;
+  }
 }
