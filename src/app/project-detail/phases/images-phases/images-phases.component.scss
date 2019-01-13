@@ -45,10 +45,12 @@
     &:not(:last-child) {
       width:100%;
       padding-top: 56.5%;
+      height:initial;
     }
     &:last-child {
       width:100%;
       padding-top: 56.5%;
+      height:initial;
     }
   }
 }
